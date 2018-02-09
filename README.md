@@ -93,7 +93,8 @@ Following are the software dependencies required to install and run hyperledger 
 ## Clone Repository
 
 Clone this repository to get the latest using the following command.
-1. `git clone https://github.com/Archstrategy/mrtgexchg.git`
+1. `https://github.com/Archstrategy/MortgageBlockchainFabric.git`
+2. `rename top level folder to mrtgexchg` for some reason the network chokes without this name.
 2. `cd mrtgexchg`  
 
 ## Setup network
