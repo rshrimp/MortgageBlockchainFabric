@@ -19,13 +19,13 @@ Records Blockchain
 ![Records Blockchain](img/recordsBlk.jpg)
 
 Lending Blockchain
-![Lending Blockchain](img/lendingBlk.png)
+![Lending Blockchain](img/lendingBlk.jpg)
 
 Books Blockchain
-![Appraisal Blockchain](img/appraiserBlk.png)
+![Appraisal Blockchain](img/appraiserBlk.jpg)
 
 Access Control for channels
-![alt text](img/accessControl.png)
+![Access Controls](img/accessControl.jpg)
 
 ## Directory Structure
 ```
