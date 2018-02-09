@@ -139,7 +139,7 @@ Query Result: [{"Key":"11111", "Record":{"RealEstateID":"11111","Appraisal":0,"N
 ,{"Key":"891011", "Record":{"RealEstateID":"891011","Appraisal":0,"NewTitleOwner":"","TransactionHistory":{"initiateBooks":"Wed, 07 Feb 2018 02:07:38 UTC"}}'  
 `
 ##### Now run the  loan origination to watch how different actors call chaincode to process loan application.
-You can submit 3 loan requests simultaneously with 3 scripts (* in 3 different terminals*) We have one requirement of title search for closing the loan that is randomized to produce true/false so there is 50/50 chance that your loan will be funded. Hence we start 3 loan requests to get at least one to go through with "funded" status.
+You can submit 3 loan requests  with 3 scripts. We have a requirement of title search for closing the loan that is randomized to produce true/false so there is 50/50 chance that your loan will be funded. Hence we try 3 loan requests to get at least one to go through with "funded" status.
 
 `./scripts/createLoanRequest.sh`
 `./scripts/createLoanRequest-2.sh`
