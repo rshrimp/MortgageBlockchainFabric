@@ -385,8 +385,8 @@ TransactionHistory map[string]string
 
 func (c *Mrtgexchg) initiateMortgage(stub shim.ChaincodeStubInterface, args []string) pb.Response {
 
-	if len(args) != 4 {
-		return shim.Error("createRealEstate arguments usage: CustID, RealEstateID, LoanAmount")
+	if len(args) != 3 {
+		return shim.Error("initiateMortgage arguments usage: CustID, RealEstateID, LoanAmount")
 	}
 	TransactionHistory := make(map[string]string)
 	TransactionHistory["initiateMortgage"] = getTimeNow()
@@ -403,7 +403,7 @@ getFicoScores generates a score and updates the lending ledger
  -------------------------------------------------------------------------------------------------*/
 func (c *Mrtgexchg) getFicoScores(stub shim.ChaincodeStubInterface, args []string) pb.Response {
 	if len(args) != 1 {
-		return shim.Error("This function needs the customerID as argument")
+		return shim.Error("getFicoScores function needs the customerID as argument")
 	}
 
 	v, err := stub.GetState(args[0])
@@ -431,7 +431,7 @@ TransactionHistory map[string]string
 -------------------------------------------------------------------------------------------------*/
 func (c *Mrtgexchg) getAppraisal(stub shim.ChaincodeStubInterface, args []string) pb.Response {
 	if len(args) != 1 {
-		return shim.Error("This function needs the RealEstateID as argument")
+		return shim.Error("getAppraisal function needs the RealEstateID as argument")
 	}
 
 	// Look for the ID first number
@@ -460,7 +460,7 @@ TransactionHistory map[string]string
 -------------------------------------------------------------------------------------------------*/
 func (c *Mrtgexchg) getTitle(stub shim.ChaincodeStubInterface, args []string) pb.Response {
 	if len(args) != 1 {
-		return shim.Error("This function needs the RealEstateID as argument")
+		return shim.Error("getTitle function needs the RealEstateID as argument")
 	}
 
 	// Look for the ID first number
@@ -487,7 +487,7 @@ it will need access to customer details, fico and RealEstateID
 -------------------------------------------------------------------------------------------------*/
 func (c *Mrtgexchg) getInsuranceQuote(stub shim.ChaincodeStubInterface, args []string) pb.Response {
 	if len(args) != 2 {
-		return shim.Error("This function needs the customerID and  RealEstateID as argument")
+		return shim.Error("getInsuranceQuote function needs the customerID and  RealEstateID as argument")
 	}
 
 	// Look for the customerID
@@ -516,7 +516,7 @@ TransactionHistory map[string]string
  -------------------------------------------------------------------------------------------------*/
 func (c *Mrtgexchg) changeTitle(stub shim.ChaincodeStubInterface, args []string) pb.Response {
 	if len(args) != 2 {
-		return shim.Error("This function needs the RealEstateID and new owner as argument")
+		return shim.Error("changeTitle function needs the RealEstateID and new owner as argument")
 	}
 
 	// Look for the ID first number
@@ -557,7 +557,7 @@ closeMortage  updates the lending ledger
 -------------------------------------------------------------------------------------------------*/
 func (c *Mrtgexchg) closeMortgage(stub shim.ChaincodeStubInterface, args []string) pb.Response {
 	if len(args) != 1 {
-		return shim.Error("This function needs the customerID as argument")
+		return shim.Error("closeMortgage function needs the customerID as argument")
 	}
 
 	// Look for the serial number
@@ -659,7 +659,7 @@ ledger needs to be passed in
 func (s *Mrtgexchg) query(APIstub shim.ChaincodeStubInterface, args []string) pb.Response {
 
 	if len(args) != 1 {
-		return shim.Error("Incorrect number of arguments. Expecting 1")
+		return shim.Error("query Incorrect number of arguments. Expecting 1")
 	}
 	asBytes, err := APIstub.GetState(args[0])
 
@@ -676,7 +676,7 @@ func (s *Mrtgexchg) query(APIstub shim.ChaincodeStubInterface, args []string) pb
 func (s *Mrtgexchg) queryBooks(APIstub shim.ChaincodeStubInterface, args []string) pb.Response {
 
 	if len(args) != 1 {
-		return shim.Error("Incorrect number of arguments. Expecting 1")
+		return shim.Error("queryBooks Incorrect number of arguments. Expecting 1")
 	}
 	asBytes, err := APIstub.GetState(args[0])
 
