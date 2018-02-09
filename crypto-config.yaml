@@ -1,0 +1,48 @@
+OrdererOrgs:
+  - Name: Orderer
+    Domain: mrtgexchg.com
+    Specs:
+      - Hostname: orderer
+PeerOrgs:
+  - Name: Bank
+    Domain: Bank.com
+    Template:
+      Count: 1
+    Users:
+      Count: 1
+  - Name: Insurance
+    Domain: Insurance.com
+    Template:
+      Count: 1
+    Users:
+      Count: 1
+  - Name: Registry
+    Domain: Registry.com
+    Template:
+      Count: 1
+    Users:
+      Count: 1
+  - Name: Title
+    Domain: Title.com
+    Template:
+      Count: 1
+    Users:
+      Count: 1
+  - Name: Appraiser
+    Domain: Appraiser.com
+    Template:
+      Count: 1
+    Users:
+      Count: 1
+  - Name: Audit
+    Domain: Audit.com
+    Template:
+      Count: 1
+    Users:
+      Count: 1
+  - Name: Fico
+    Domain: Fico.com
+    Template:
+      Count: 1
+    Users:
+      Count: 1

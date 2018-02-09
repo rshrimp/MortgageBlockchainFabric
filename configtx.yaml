@@ -1,0 +1,147 @@
+
+Profiles:
+
+    MRTGEXCHGOrdererGenesis:
+        Orderer:
+            <<: *OrdererDefaults
+            Organizations:
+                - *OrdererOrg
+        Consortiums:
+            MRTGEXCHG:
+                Organizations:
+                    - *Bank
+                    - *Insurance
+                    - *Registry
+                    - *Title
+                    - *Appraiser
+                    - *Audit
+                    - *Fico
+
+    RecordsChannel:
+        Consortium: MRTGEXCHG
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+                  - *Bank
+                  - *Insurance
+                  - *Registry
+                  - *Title
+                  - *Appraiser
+                  - *Audit
+    LendingChannel:
+        Consortium: MRTGEXCHG
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+              - *Bank
+              - *Insurance
+              - *Audit
+              - *Fico
+              - *Title
+    BooksChannel:
+        Consortium: MRTGEXCHG
+        Application:
+            <<: *ApplicationDefaults
+            Organizations:
+              - *Bank
+              - *Insurance
+              - *Title
+              - *Appraiser
+              - *Audit
+              - *Registry              
+Organizations:
+
+    - &OrdererOrg
+        Name: OrdererMSP
+        ID: OrdererMSP
+
+        MSPDir: crypto-config/ordererOrganizations/mrtgexchg.com/msp
+
+    - &Bank
+        Name: BankMSP
+        ID: BankMSP
+
+        MSPDir: crypto-config/peerOrganizations/Bank.com/msp
+
+        AnchorPeers:
+            - Host: peer0.Bank.com
+              Port: 7051
+
+    - &Insurance
+        Name: InsuranceMSP
+        ID: InsuranceMSP
+
+        MSPDir: crypto-config/peerOrganizations/Insurance.com/msp
+
+        AnchorPeers:
+            - Host: peer0.Insurance.com
+              Port: 7051
+
+    - &Registry
+        Name: RegistryMSP
+        ID: RegistryMSP
+
+        MSPDir: crypto-config/peerOrganizations/Registry.com/msp
+
+        AnchorPeers:
+            - Host: peer0.Registry.com
+              Port: 7051
+
+    - &Title
+        Name: TitleMSP
+        ID: TitleMSP
+
+        MSPDir: crypto-config/peerOrganizations/Title.com/msp
+
+        AnchorPeers:
+            - Host: peer0.Title.com
+              Port: 7051
+
+    - &Appraiser
+        Name: AppraiserMSP
+        ID: AppraiserMSP
+
+        MSPDir: crypto-config/peerOrganizations/Appraiser.com/msp
+
+        AnchorPeers:
+            - Host: peer0.Appraiser.com
+              Port: 7051
+
+    - &Audit
+        Name: AuditMSP
+        ID: AuditMSP
+
+        MSPDir: crypto-config/peerOrganizations/Audit.com/msp
+
+        AnchorPeers:
+            - Host: peer0.Audit.com
+              Port: 7051
+    - &Fico
+        Name: FicoMSP
+        ID: FicoMSP
+
+        MSPDir: crypto-config/peerOrganizations/Fico.com/msp
+
+        AnchorPeers:
+            - Host: peer0.Fico.com
+              Port: 7051
+
+Orderer: &OrdererDefaults
+    OrdererType: solo
+
+    Addresses:
+        - orderer.mrtgexchg.com:7050
+
+    BatchTimeout: 2s
+
+    BatchSize:
+
+        MaxMessageCount: 10
+        AbsoluteMaxBytes: 99 MB
+        PreferredMaxBytes: 512 KB
+
+    Organizations:
+
+
+Application: &ApplicationDefaults
+    Organizations:
