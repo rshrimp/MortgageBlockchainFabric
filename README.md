@@ -52,10 +52,12 @@ Flowchart and 3 blockchains
     ├──creatChannels.sh
     ├──createLedgerEntries.sh
     ├──createLoanRequest.sh
-    ├──createLoanRequest2.sh
+    ├──createLoanRequest-2.sh
+    ├──createLoanRequest-3.sh    
     ├──joinChannels.sh
     ├──query.sh
     ├──queryAll.sh
+    ├──setupNetwork.sh    
     ├──start_network.sh
     ├──stop_network.sh
 ```
