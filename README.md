@@ -27,6 +27,10 @@ Books Blockchain
 Access Control for channels
 ![Access Controls](img/accessControl.jpg)
 
+Flowchart and 3 blockchains
+![Access Controls](img/flow.jpg)
+
+
 ## Directory Structure
 ```
 
