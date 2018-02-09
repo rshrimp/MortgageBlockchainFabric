@@ -109,12 +109,14 @@ Clone this repository to get the latest using the following command.
   * build chaincodes (compile before you deploy, this step is optional but is a must if you edit chaincodes and want to restart the network so as to make sure it does not fail to compile during deployment )
 
     `go get -u --tags nopkcs11 github.com/hyperledger/fabric/core/chaincode/shim`
+    `go build --tags nopkcs11 `
 
-* start network with start option, this script creates channels, join channels, instantiates and installs chaincode, populates ledger with initial entries (realestates on records, and realestates on books blockchains). I will also dump the entire ledgers at the end.
-
+* start network with start option
   `./scripts/start_network.sh`
 
- Let's check if we have correct entries in all the ledgers.  Lending Ledger should be empty as we have not submitted any loan application.
+* `./scripts/setupNetwork.sh` this script creates channels, join channels, instantiates and installs chaincode, populates ledger with initial entries (realestates on records, and realestates on books blockchains). It will also dump the entire ledgers at the end.
+
+ You can  check if we have correct entries in all the ledgers.  Lending Ledger should be empty as we have not submitted any loan application.
 
 `
 Query Result: [{"Key":"11111", "Record":{"RealEstateID":"11111","Address":"10 High Strret, LA 75004 ","Value":1.1e+06,"Details":"6501 sq. ft 7 beds 2 baths blah blah","Owner":"Doug Gates",
